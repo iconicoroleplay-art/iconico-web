@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Íconico Roleplay</title>
+  <meta name="description" content="Íconico Roleplay: servidor de rol serio en FiveM. Negocios reales, bandas con sistema propio y una comunidad que juega en serio.">
+  <meta property="og:title" content="Íconico Roleplay">
+  <meta property="og:description" content="Rol serio en Los Santos. Tu historia empieza acá.">
+  <meta property="og:image" content="assets/logo-hd.png">
+  <meta name="theme-color" content="#050914">
+  <link rel="icon" href="assets/logo-128.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logo-128.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <!-- Navegación -->
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#inicio">
+      <img src="assets/logo-128.png" alt="" width="34" height="34">
+      <span>ÍCONICO</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#camino">Cómo entrar</a>
+      <a href="#ciudad">La ciudad</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#esencia">Esencia</a>
+      <a href="#comunidad">Comunidad</a>
+    </nav>
+    <div class="nav-right">
+      <button class="basket-btn" id="basketBtn" type="button" aria-label="Abrir carrito">
+        <span aria-hidden="true">💎</span><b id="basketCount">0</b>
+      </button>
+      <a class="btn btn-sm btn-glow" href="#" data-link="discord" target="_blank" rel="noopener">Discord</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menú" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="hero-logo" id="heroLogo" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="ring ring-2"></div>
+        <img src="assets/logo-hd.png" alt="Íconico Roleplay" width="640" height="640" fetchpriority="high">
+      </div>
+      <p class="eyebrow" id="liveHero"><span class="dot"></span><span>Conectando con la ciudad…</span></p>
+      <h1 class="hero-title"><span class="shine">ÍCONICO</span><small>ROLEPLAY</small></h1>
+      <p class="hero-sub">Rol serio en Los Santos. Negocios reales, bandas con sistema propio y una comunidad que juega en serio.<br><strong>Tu historia empieza acá.</strong></p>
+      <div class="hero-cta">
+        <a class="btn btn-glow" href="#" data-link="discord" target="_blank" rel="noopener">Entrar a la ciudad</a>
+        <a class="btn btn-ghost" href="#tienda">Ver la tienda</a>
+      </div>
+      <a class="scroll-hint" href="#camino" aria-label="Bajar"><span></span></a>
+    </section>
+
+    <!-- Ticker en vivo -->
+    <div class="ticker" aria-label="Novedades en vivo"><div class="ticker-track" id="ticker"></div></div>
+
+    <!-- Cómo entrar -->
+    <section class="section" id="camino">
+      <header class="section-head reveal">
+        <p class="kicker">Bienvenido</p>
+        <h2>Tu camino a la ciudad</h2>
+        <p>Cuatro pasos y estás adentro. Sin vueltas.</p>
+      </header>
+      <ol class="steps">
+        <li class="step reveal"><span class="step-n">01</span><h3>Leé la normativa</h3><p>Somos rol serio. Conocé las reglas antes de pisar la ciudad.</p><a href="#" data-link="normas" target="_blank" rel="noopener">Abrir normativa →</a></li>
+        <li class="step reveal"><span class="step-n">02</span><h3>Unite al Discord</h3><p>Ahí está todo: anuncios, soporte, bandas y comercios.</p><a href="#" data-link="discord" target="_blank" rel="noopener">Entrar al Discord →</a></li>
+        <li class="step reveal"><span class="step-n">03</span><h3>Pedí tu whitelist</h3><p>Completá la solicitud con tus datos y la historia de tu personaje.</p></li>
+        <li class="step reveal"><span class="step-n">04</span><h3>Conectate</h3><p>Con el rol <b>Ciudadano</b> se abre todo. Abrí FiveM y entrá.</p></li>
+      </ol>
+    </section>
+
+    <!-- Pulso de la ciudad -->
+    <section class="section" id="ciudad">
+      <header class="section-head reveal">
+        <p class="kicker"><span class="dot" id="liveDot"></span> En vivo</p>
+        <h2>El pulso de la ciudad</h2>
+        <p id="liveUpdated">Esperando datos de la ciudad…</p>
+      </header>
+      <div class="stats reveal">
+        <div class="stat"><b data-count id="statPlayers">—</b><span>ciudadanos en la calle</span></div>
+        <div class="stat"><b data-count id="statOpen">—</b><span>negocios abiertos</span></div>
+        <div class="stat"><b data-count id="statStaff">—</b><span>staff activo</span></div>
+        <div class="stat"><b data-count id="statDiscord">—</b><span>en la comunidad</span></div>
+      </div>
+      <div class="live-grid">
+        <article class="panel reveal">
+          <h3>🏪 Negocios <small id="negociosHint"></small></h3>
+          <ul class="biz" id="negocios"><li class="empty">Cargando negocios…</li></ul>
+        </article>
+        <article class="panel reveal">
+          <h3>🛡️ Equipo Íconico</h3>
+          <ul class="staff" id="staff"><li class="empty">Cargando staff…</li></ul>
+        </article>
+      </div>
+      <article class="panel panel-wide reveal" id="bandasPanel" hidden>
+        <h3>🏴 Bandas de la ciudad</h3>
+        <ul class="gangs" id="bandas"></ul>
+      </article>
+    </section>
+
+    <!-- Tienda -->
+    <section class="section" id="tienda">
+      <header class="section-head reveal">
+        <p class="kicker">Tienda oficial</p>
+        <h2>Puntos de bonificación</h2>
+        <p>Comprá sin salir de la web: elegís, te logueás con FiveM y pagás seguro con Tebex. Después canjeás en la ciudad con <code>/canjear</code> y el código que te llega por mail.</p>
+      </header>
+      <div class="packages" id="packages"></div>
+      <p class="store-note reveal">El cobro, la entrega y los reembolsos los gestiona <b>Tebex</b>, el procesador oficial de pagos de FiveM.</p>
+    </section>
+
+    <!-- Esencia -->
+    <section class="section" id="esencia">
+      <header class="section-head reveal">
+        <p class="kicker">Lo que nos hace Íconico</p>
+        <h2>Rol con alma propia</h2>
+      </header>
+      <div class="features">
+        <article class="feature reveal"><span class="f-ico">⚡</span><h3>PG liberado</h3><p>Un golpe leve no corta tu rol. Pensado para que las persecuciones fluyan, nunca para sacar ventaja.</p></article>
+        <article class="feature reveal"><span class="f-ico">🎭</span><h3>Robos con fundamento</h3><p>Nadie te roba porque sí. Todo robo nace de un rol previo que lo justifica.</p></article>
+        <article class="feature reveal"><span class="f-ico">🏴</span><h3>Bandas con sistema propio</h3><p>Territorios, grafitis, ataques y guerras con la Tablet Criminal. El barrio se gana jugando.</p></article>
+        <article class="feature reveal"><span class="f-ico">🍔</span><h3>Negocios reales</h3><p>Restaurantes, tiendas y talleres que abren cuando sus empleados están en servicio.</p></article>
+        <article class="feature reveal"><span class="f-ico">🚓</span><h3>Servicios que importan</h3><p>Policía y EMS con protocolos propios. Cada rol tiene consecuencias.</p></article>
+        <article class="feature reveal"><span class="f-ico">💎</span><h3>Comunidad cuidada</h3><p>Whitelist, staff presente y una normativa clara para que todos disfruten.</p></article>
+      </div>
+    </section>
+
+    <!-- Normativa -->
+    <section class="band reveal" id="normas">
+      <div>
+        <h2>Antes de entrar, leé la normativa</h2>
+        <p>Conceptos, rol ilegal, bandas, servicios y sanciones. Todo en un solo lugar.</p>
+      </div>
+      <a class="btn btn-glow" href="#" data-link="normas" target="_blank" rel="noopener">Leer normativa</a>
+    </section>
+
+    <!-- Comunidad -->
+    <section class="section" id="comunidad">
+      <header class="section-head reveal">
+        <p class="kicker">Seguinos</p>
+        <h2>La comunidad</h2>
+      </header>
+      <div class="kick-live" id="kickLive" hidden>
+        <div class="kick-head"><span class="live-badge">● EN VIVO</span><b id="kickTitle">thepelusa está transmitiendo</b><span id="kickViewers"></span></div>
+        <div class="kick-frame" id="kickFrame"></div>
+      </div>
+      <div class="socials">
+        <a class="social reveal discord" href="#" data-link="discord" target="_blank" rel="noopener">
+          <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19.6 5.3A16.6 16.6 0 0 0 15.5 4l-.5 1a15.3 15.3 0 0 0-6 0L8.5 4a16.6 16.6 0 0 0-4.1 1.3C1.8 9.2 1.1 13 1.4 16.7a16.7 16.7 0 0 0 5 2.5l1.1-1.7a10.8 10.8 0 0 1-1.7-.8l.4-.3a11.9 11.9 0 0 0 11.6 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.7a16.6 16.6 0 0 0 5-2.5c.4-4.3-.7-8-2.9-11.4ZM8.7 14.5c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg></span>
+          <b>Discord</b><span id="discordCount">La puerta de entrada a la ciudad</span>
+        </a>
+        <a class="social reveal instagram" href="#" data-link="instagram" target="_blank" rel="noopener">
+          <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24" class="stroke"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" class="fill"/></svg></span>
+          <b>Instagram</b><span>@iconicoroleplay</span>
+        </a>
+        <a class="social reveal kick" href="#" data-link="kick" target="_blank" rel="noopener">
+          <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 3h6v4h2V5h2V3h8v6h-2v2h-2v2h2v2h2v6h-8v-2h-2v-2H9v4H3V3Z"/></svg></span>
+          <b>Kick</b><span id="kickStatus">kick.com/thepelusa</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo-128.png" alt="" width="44" height="44">
+    <p><b>Íconico Roleplay</b> · Servidor de rol en FiveM</p>
+    <p class="muted">No estamos afiliados a Rockstar Games ni a Take-Two. Los pagos los procesa Tebex Limited.</p>
+  </footer>
+
+  <!-- Carrito -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-box" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <header><h3 id="drawerTitle">Tu carrito</h3><button type="button" class="x" data-close aria-label="Cerrar">✕</button></header>
+      <p class="drawer-user" id="drawerUser"></p>
+      <ul class="drawer-items" id="drawerItems"></ul>
+      <footer>
+        <div class="drawer-total"><span>Total</span><b id="drawerTotal">—</b></div>
+        <button type="button" class="btn btn-glow btn-block" id="checkoutBtn">Pagar con Tebex</button>
+        <p class="muted small">Pago seguro procesado por Tebex.</p>
+      </footer>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="https://js.tebex.io/v/1.js" defer></script>
+  <script src="js/fx.js" defer></script>
+  <script src="js/live.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
