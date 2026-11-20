@@ -1,9 +1,221 @@
 {
-  "updatedAt": null,
-  "server": { "online": false, "players": 0, "max": 0 },
-  "discord": { "members": 0 },
-  "staff": [],
-  "negocios": { "reporting": false, "items": [] },
-  "bandas": [],
-  "kick": { "channel": "thepelusa", "live": false, "title": "", "viewers": 0 }
+ "updatedAt": "2026-11-20T23:56:46.576Z",
+ "server": {
+  "online": true,
+  "players": 1,
+  "max": 4
+ },
+ "discord": {
+  "members": 13
+ },
+ "staff": [
+  {
+   "name": "𓆩PELUSA𓆪",
+   "avatar": "https://cdn.discordapp.com/avatars/553765619963658271/1be4677b33a73222c250038d29759265.webp?size=128",
+   "rank": "Fundador",
+   "color": "#00e5ff",
+   "status": "off"
+  },
+  {
+   "name": "𝐀𝐥𝐞𝐱𝐢𝐬✯",
+   "avatar": "https://cdn.discordapp.com/avatars/709381753902727171/266144665abdd11ec94df69eb22149e0.webp?size=128",
+   "rank": "Administrador",
+   "color": "#e74c3c",
+   "status": "off"
+  },
+  {
+   "name": "BLANCOdeCOMBATE",
+   "avatar": "https://cdn.discordapp.com/avatars/201547087236694016/6b237d1cb4227081c1232ee122867c93.webp?size=128",
+   "rank": "Administrador",
+   "color": "#e74c3c",
+   "status": "off"
+  },
+  {
+   "name": "Monoburro",
+   "avatar": "https://cdn.discordapp.com/avatars/515341010784616449/60d662f2417881c0b811a334931f2a3f.webp?size=128",
+   "rank": "Administrador",
+   "color": "#e74c3c",
+   "status": "off"
+  },
+  {
+   "name": "Axe",
+   "avatar": "https://cdn.discordapp.com/avatars/693626786378022925/a070e57cf67ed9c2cbf039d3024f988a.webp?size=128",
+   "rank": "Soporte",
+   "color": "#3b9dff",
+   "status": "off"
+  }
+ ],
+ "negocios": {
+  "reporting": true,
+  "items": [
+   {
+    "label": "REDLINE Performance",
+    "kind": "taller",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Cafe Day",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Beanmachine",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Burgershot",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Café",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Casey",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Centrel Perk",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Clucking Bell",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Coffee Shop",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Comedy Club",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Coolbeans",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "EAST CUSTOM",
+    "kind": "taller",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Italian Central Bar",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Kebab King",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Los Santos Custom",
+    "kind": "taller",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "LTD Grove Street",
+    "kind": "tienda",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Malibu Club",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "PISTOP",
+    "kind": "taller",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Rex Diner",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Taco Farmer",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "The Lust Resort",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Three Hawker Boys",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Up-N-Atom",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "UwU Cafe",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Wigwam Burger",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   }
+  ]
+ },
+ "bandas": [
+  {
+   "label": "14K",
+   "color": "#e5484d",
+   "members": 1
+  },
+  {
+   "label": "donpepitos",
+   "color": "#a3e635",
+   "members": 0
+  }
+ ],
+ "kick": {
+  "channel": "thepelusa",
+  "live": false,
+  "title": null,
+  "viewers": 0
+ }
 }
