@@ -1,0 +1,9 @@
+{
+  "updatedAt": null,
+  "server": { "online": false, "players": 0, "max": 0 },
+  "discord": { "members": 0 },
+  "staff": [],
+  "negocios": { "reporting": false, "items": [] },
+  "bandas": [],
+  "kick": { "channel": "thepelusa", "live": false, "title": "", "viewers": 0 }
+}
