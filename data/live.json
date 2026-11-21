@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T08:38:49.335Z",
+ "updatedAt": "2026-11-21T08:40:49.208Z",
  "server": {
   "online": true,
   "players": 1,
@@ -51,8 +51,8 @@
    {
     "label": "REDLINE Performance",
     "kind": "taller",
-    "open": true,
-    "count": 1
+    "open": false,
+    "count": 0
    },
    {
     "label": "Cafe Day",
@@ -204,7 +204,7 @@
   {
    "label": "14K",
    "color": "#e5484d",
-   "members": 1
+   "members": 0
   },
   {
    "label": "donpepitos",
