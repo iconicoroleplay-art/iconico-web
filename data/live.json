@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T03:06:47.168Z",
+ "updatedAt": "2026-11-21T03:08:47.298Z",
  "server": {
   "online": true,
   "players": 1,
@@ -51,8 +51,8 @@
    {
     "label": "REDLINE Performance",
     "kind": "taller",
-    "open": false,
-    "count": 0
+    "open": true,
+    "count": 1
    },
    {
     "label": "Cafe Day",
