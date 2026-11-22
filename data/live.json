@@ -1,9 +1,9 @@
 {
- "updatedAt": "2026-11-22T22:59:02.311Z",
+ "updatedAt": "2026-11-22T23:05:02.338Z",
  "server": {
-  "online": false,
+  "online": true,
   "players": 0,
-  "max": 0
+  "max": 4
  },
  "discord": {
   "members": 13
