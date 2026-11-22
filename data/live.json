@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T09:59:38.081Z",
+ "updatedAt": "2026-11-22T22:19:02.330Z",
  "server": {
   "online": false,
   "players": 0,
@@ -49,20 +49,8 @@
   "reporting": false,
   "items": [
    {
-    "label": "REDLINE Performance",
-    "kind": "taller",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "Cafe Day",
     "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "LTD Grove Street",
-    "kind": "tienda",
     "open": false,
     "count": 0
    },
@@ -127,12 +115,6 @@
     "count": 0
    },
    {
-    "label": "EAST CUSTOM",
-    "kind": "taller",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "Italian Central Bar",
     "kind": "restaurante",
     "open": false,
@@ -141,12 +123,6 @@
    {
     "label": "Kebab King",
     "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Los Santos Custom",
-    "kind": "taller",
     "open": false,
     "count": 0
    },
@@ -165,12 +141,6 @@
    {
     "label": "Paradise Club",
     "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "PISTOP",
-    "kind": "taller",
     "open": false,
     "count": 0
    },
@@ -224,18 +194,7 @@
    }
   ]
  },
- "bandas": [
-  {
-   "label": "14K",
-   "color": "#e5484d",
-   "members": 0
-  },
-  {
-   "label": "donpepitos",
-   "color": "#a3e635",
-   "members": 0
-  }
- ],
+ "bandas": null,
  "kick": {
   "channel": "thepelusa",
   "live": false,
