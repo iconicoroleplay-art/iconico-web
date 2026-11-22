@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T03:17:35.127Z",
+ "updatedAt": "2026-11-22T03:21:35.074Z",
  "server": {
   "online": true,
   "players": 1,
@@ -38,7 +38,7 @@
    "status": "off"
   },
   {
-   "name": "Axe",
+   "name": "axel",
    "avatar": "https://cdn.discordapp.com/avatars/693626786378022925/d04919ff4d0d2afd0216ccc9aecd82a1.webp?size=128",
    "rank": "Soporte",
    "color": "#3b9dff",
