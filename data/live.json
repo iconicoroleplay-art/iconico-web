@@ -1,8 +1,8 @@
 {
- "updatedAt": "2026-11-22T05:21:36.101Z",
+ "updatedAt": "2026-11-22T05:23:35.570Z",
  "server": {
   "online": true,
-  "players": 2,
+  "players": 1,
   "max": 4
  },
  "discord": {
@@ -151,6 +151,24 @@
     "count": 0
    },
    {
+    "label": "Oasis Resort",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Paradise Club",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Pearl",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
     "label": "PISTOP",
     "kind": "taller",
     "open": false,
@@ -164,6 +182,12 @@
    },
    {
     "label": "Taco Farmer",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Tequi-la-la",
     "kind": "restaurante",
     "open": false,
     "count": 0
