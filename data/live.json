@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T05:39:35.603Z",
+ "updatedAt": "2026-11-22T05:43:35.672Z",
  "server": {
   "online": true,
   "players": 2,
@@ -59,6 +59,12 @@
     "kind": "restaurante",
     "open": false,
     "count": 0
+   },
+   {
+    "label": "Pearl",
+    "kind": "restaurante",
+    "open": true,
+    "count": 1
    },
    {
     "label": "Beanmachine",
@@ -158,12 +164,6 @@
    },
    {
     "label": "Paradise Club",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Pearl",
     "kind": "restaurante",
     "open": false,
     "count": 0
