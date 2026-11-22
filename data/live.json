@@ -1,9 +1,9 @@
 {
- "updatedAt": "2026-11-22T02:51:34.956Z",
+ "updatedAt": "2026-11-22T03:01:35.093Z",
  "server": {
-  "online": true,
-  "players": 1,
-  "max": 4
+  "online": false,
+  "players": 0,
+  "max": 0
  },
  "discord": {
   "members": 13
@@ -39,7 +39,7 @@
   },
   {
    "name": "Axe",
-   "avatar": "https://cdn.discordapp.com/avatars/693626786378022925/a070e57cf67ed9c2cbf039d3024f988a.webp?size=128",
+   "avatar": "https://cdn.discordapp.com/avatars/693626786378022925/9dfadb68d3b4895f96855d2677cf749c.webp?size=128",
    "rank": "Soporte",
    "color": "#3b9dff",
    "status": "off"
