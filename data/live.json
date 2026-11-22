@@ -1,8 +1,8 @@
 {
- "updatedAt": "2026-11-22T23:17:02.400Z",
+ "updatedAt": "2026-11-22T23:19:02.513Z",
  "server": {
   "online": true,
-  "players": 0,
+  "players": 1,
   "max": 4
  },
  "discord": {
@@ -63,8 +63,8 @@
    {
     "label": "LTD Grove Street",
     "kind": "tienda",
-    "open": true,
-    "count": 1
+    "open": false,
+    "count": 0
    },
    {
     "label": "Pearl",
