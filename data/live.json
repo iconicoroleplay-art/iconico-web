@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T05:43:35.672Z",
+ "updatedAt": "2026-11-22T05:45:35.583Z",
  "server": {
   "online": true,
   "players": 2,
@@ -63,8 +63,8 @@
    {
     "label": "Pearl",
     "kind": "restaurante",
-    "open": true,
-    "count": 1
+    "open": false,
+    "count": 0
    },
    {
     "label": "Beanmachine",
