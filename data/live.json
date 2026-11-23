@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T08:03:04.260Z",
+ "updatedAt": "2026-11-23T08:13:04.391Z",
  "server": {
   "online": true,
   "players": 2,
@@ -86,6 +86,12 @@
    },
    {
     "label": "7 Skys",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Bahamas",
     "kind": "restaurante",
     "open": false,
     "count": 0
