@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T05:53:04.511Z",
+ "updatedAt": "2026-11-23T06:01:04.540Z",
  "server": {
   "online": true,
   "players": 2,
@@ -71,6 +71,12 @@
     "kind": "restaurante",
     "open": false,
     "count": 0
+   },
+   {
+    "label": "Legion Food Court",
+    "kind": "restaurante",
+    "open": true,
+    "count": 1
    },
    {
     "label": "Pearl",
@@ -152,12 +158,6 @@
    },
    {
     "label": "Kebab King",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Legion Food Court",
     "kind": "restaurante",
     "open": false,
     "count": 0
