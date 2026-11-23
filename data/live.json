@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T03:27:03.277Z",
+ "updatedAt": "2026-11-23T03:37:03.425Z",
  "server": {
   "online": true,
   "players": 2,
@@ -74,6 +74,12 @@
    },
    {
     "label": "Pearl",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "7 Skys",
     "kind": "restaurante",
     "open": false,
     "count": 0
