@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T21:28:35.997Z",
+ "updatedAt": "2026-11-23T21:30:36.202Z",
  "server": {
   "online": true,
   "players": 0,
@@ -46,7 +46,7 @@
   }
  ],
  "negocios": {
-  "reporting": false,
+  "reporting": true,
   "items": [
    {
     "label": "REDLINE Performance",
