@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T06:07:03.946Z",
+ "updatedAt": "2026-11-23T06:15:03.910Z",
  "server": {
   "online": true,
   "players": 3,
@@ -75,8 +75,8 @@
    {
     "label": "Legion Food Court",
     "kind": "restaurante",
-    "open": true,
-    "count": 1
+    "open": false,
+    "count": 0
    },
    {
     "label": "Pearl",
