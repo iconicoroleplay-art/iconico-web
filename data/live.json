@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T02:37:03.202Z",
+ "updatedAt": "2026-11-23T02:41:03.211Z",
  "server": {
   "online": true,
   "players": 2,
@@ -69,8 +69,8 @@
    {
     "label": "Tequi-la-la",
     "kind": "restaurante",
-    "open": true,
-    "count": 1
+    "open": false,
+    "count": 0
    },
    {
     "label": "Pearl",
