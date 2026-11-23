@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T01:53:03.035Z",
+ "updatedAt": "2026-11-23T01:55:03.048Z",
  "server": {
   "online": true,
   "players": 1,
@@ -71,6 +71,12 @@
     "kind": "restaurante",
     "open": false,
     "count": 0
+   },
+   {
+    "label": "Tequi-la-la",
+    "kind": "restaurante",
+    "open": true,
+    "count": 1
    },
    {
     "label": "Beanmachine",
@@ -182,12 +188,6 @@
    },
    {
     "label": "Taco Farmer",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Tequi-la-la",
     "kind": "restaurante",
     "open": false,
     "count": 0
