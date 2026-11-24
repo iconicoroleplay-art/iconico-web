@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-24T00:02:36.731Z",
+ "updatedAt": "2026-11-24T00:04:36.612Z",
  "server": {
   "online": true,
   "players": 1,
@@ -57,8 +57,8 @@
    {
     "label": "LTD Grove Street",
     "kind": "tienda",
-    "open": false,
-    "count": 0
+    "open": true,
+    "count": 1
    },
    {
     "label": "Cafe Day",
