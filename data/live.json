@@ -1,9 +1,9 @@
 {
- "updatedAt": "2026-11-25T03:31:27.164Z",
+ "updatedAt": "2026-11-25T03:39:27.087Z",
  "server": {
-  "online": true,
-  "players": 1,
-  "max": 4
+  "online": false,
+  "players": 0,
+  "max": 0
  },
  "discord": {
   "members": 13
@@ -51,8 +51,8 @@
    {
     "label": "REDLINE Performance",
     "kind": "taller",
-    "open": true,
-    "count": 1
+    "open": false,
+    "count": 0
    },
    {
     "label": "LTD Grove Street",
