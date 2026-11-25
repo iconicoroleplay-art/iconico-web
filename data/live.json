@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T05:13:27.583Z",
+ "updatedAt": "2026-11-25T05:15:27.491Z",
  "server": {
   "online": true,
   "players": 1,
@@ -206,6 +206,12 @@
    },
    {
     "label": "Rex Diner",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Rim Shot",
     "kind": "restaurante",
     "open": false,
     "count": 0
