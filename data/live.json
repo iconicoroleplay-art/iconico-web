@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T05:07:27.553Z",
+ "updatedAt": "2026-11-25T05:13:27.583Z",
  "server": {
   "online": true,
   "players": 1,
@@ -164,6 +164,12 @@
    },
    {
     "label": "Kebab King",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Las Cuadras Bar",
     "kind": "restaurante",
     "open": false,
     "count": 0
