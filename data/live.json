@@ -1,9 +1,9 @@
 {
- "updatedAt": "2026-11-25T02:39:38.400Z",
+ "updatedAt": "2026-11-25T02:49:26.999Z",
  "server": {
-  "online": false,
+  "online": true,
   "players": 0,
-  "max": 0
+  "max": 4
  },
  "discord": {
   "members": 13
@@ -46,7 +46,7 @@
   }
  ],
  "negocios": {
-  "reporting": false,
+  "reporting": true,
   "items": [
    {
     "label": "LTD Grove Street",
