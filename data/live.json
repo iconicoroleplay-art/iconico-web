@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T23:50:37.242Z",
+ "updatedAt": "2026-11-26T23:54:37.136Z",
  "server": {
   "online": true,
   "players": 1,
@@ -104,6 +104,12 @@
    },
    {
     "label": "Beanmachine",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "Burger Shot Del Perro",
     "kind": "restaurante",
     "open": false,
     "count": 0
