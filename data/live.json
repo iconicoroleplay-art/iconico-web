@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T02:37:41.290Z",
+ "updatedAt": "2026-11-26T02:41:41.418Z",
  "server": {
   "online": true,
   "players": 1,
@@ -73,16 +73,16 @@
     "count": 0
    },
    {
-    "label": "Legion Food Court",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "LTD Sandy",
     "kind": "tienda",
     "open": true,
     "count": 1
+   },
+   {
+    "label": "Legion Food Court",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
    },
    {
     "label": "Pearl",
