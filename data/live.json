@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T03:05:41.476Z",
+ "updatedAt": "2026-11-26T03:09:41.396Z",
  "server": {
   "online": true,
   "players": 1,
@@ -67,16 +67,16 @@
     "count": 0
    },
    {
-    "label": "Tequi-la-la",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "LTD Sandy",
     "kind": "tienda",
     "open": true,
     "count": 1
+   },
+   {
+    "label": "Tequi-la-la",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
    },
    {
     "label": "Legion Food Court",
