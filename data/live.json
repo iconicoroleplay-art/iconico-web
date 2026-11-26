@@ -1,8 +1,8 @@
 {
- "updatedAt": "2026-11-26T22:40:36.867Z",
+ "updatedAt": "2026-11-26T22:44:36.959Z",
  "server": {
   "online": true,
-  "players": 0,
+  "players": 1,
   "max": 4
  },
  "discord": {
@@ -63,8 +63,8 @@
    {
     "label": "LTD Sandy",
     "kind": "tienda",
-    "open": false,
-    "count": 0
+    "open": true,
+    "count": 1
    },
    {
     "label": "Cafe Day",
