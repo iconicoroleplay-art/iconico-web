@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T23:44:37.225Z",
+ "updatedAt": "2026-11-26T23:46:37.138Z",
  "server": {
   "online": true,
   "players": 1,
@@ -57,8 +57,8 @@
    {
     "label": "LTD Sandy",
     "kind": "tienda",
-    "open": false,
-    "count": 0
+    "open": true,
+    "count": 1
    },
    {
     "label": "LTD Grove Street",
