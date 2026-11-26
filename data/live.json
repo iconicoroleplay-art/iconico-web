@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T23:10:36.955Z",
+ "updatedAt": "2026-11-26T23:14:37.085Z",
  "server": {
   "online": false,
   "players": 0,
@@ -46,7 +46,7 @@
   }
  ],
  "negocios": {
-  "reporting": true,
+  "reporting": false,
   "items": [
    {
     "label": "REDLINE Performance",
@@ -63,8 +63,8 @@
    {
     "label": "LTD Sandy",
     "kind": "tienda",
-    "open": true,
-    "count": 1
+    "open": false,
+    "count": 0
    },
    {
     "label": "Cafe Day",
