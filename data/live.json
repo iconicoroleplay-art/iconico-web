@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T00:59:41.038Z",
+ "updatedAt": "2026-11-26T01:03:40.935Z",
  "server": {
   "online": true,
   "players": 1,
@@ -51,8 +51,8 @@
    {
     "label": "REDLINE Performance",
     "kind": "taller",
-    "open": true,
-    "count": 1
+    "open": false,
+    "count": 0
    },
    {
     "label": "LTD Grove Street",
@@ -75,6 +75,12 @@
    {
     "label": "Legion Food Court",
     "kind": "restaurante",
+    "open": false,
+    "count": 0
+   },
+   {
+    "label": "LTD Sandy",
+    "kind": "tienda",
     "open": false,
     "count": 0
    },
@@ -177,12 +183,6 @@
    {
     "label": "Los Santos Custom",
     "kind": "taller",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "LTD Sandy",
-    "kind": "tienda",
     "open": false,
     "count": 0
    },
