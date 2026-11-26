@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T03:23:41.552Z",
+ "updatedAt": "2026-11-26T03:29:41.574Z",
  "server": {
   "online": true,
   "players": 1,
@@ -61,16 +61,16 @@
     "count": 0
    },
    {
-    "label": "Cafe Day",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "LTD Sandy",
     "kind": "tienda",
     "open": true,
     "count": 1
+   },
+   {
+    "label": "Cafe Day",
+    "kind": "restaurante",
+    "open": false,
+    "count": 0
    },
    {
     "label": "Tequi-la-la",
