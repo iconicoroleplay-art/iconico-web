@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T19:35:39.656Z",
+ "updatedAt": "2026-11-27T19:47:25.739Z",
  "server": {
   "online": false,
   "players": 0,
@@ -103,12 +103,6 @@
     "count": 0
    },
    {
-    "label": "Beanmachine",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "Burger Shot Autopista",
     "kind": "restaurante",
     "open": false,
@@ -133,68 +127,8 @@
     "count": 0
    },
    {
-    "label": "Burgershot",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Café",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Casey",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Centrel Perk",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Clucking Bell",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Coffee Shop",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Comedy Club",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Coolbeans",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "EAST CUSTOM",
     "kind": "taller",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Italian Central Bar",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Kebab King",
-    "kind": "restaurante",
     "open": false,
     "count": 0
    },
@@ -207,12 +141,6 @@
    {
     "label": "Los Santos Custom",
     "kind": "taller",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Malibu Club",
-    "kind": "restaurante",
     "open": false,
     "count": 0
    },
@@ -235,12 +163,6 @@
     "count": 0
    },
    {
-    "label": "Rex Diner",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "Rim Shot",
     "kind": "restaurante",
     "open": false,
@@ -259,25 +181,7 @@
     "count": 0
    },
    {
-    "label": "Three Hawker Boys",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Up-N-Atom",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "UwU Cafe",
-    "kind": "restaurante",
-    "open": false,
-    "count": 0
-   },
-   {
-    "label": "Wigwam Burger",
     "kind": "restaurante",
     "open": false,
     "count": 0
