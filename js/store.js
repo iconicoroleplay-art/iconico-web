@@ -1,14 +1,16 @@
 /**
- * Tienda con Tebex Headless API: los paquetes se leen de Tebex, el jugador se
- * loguea con FiveM y paga en la ventana oficial de Tebex (Tebex.js).
+ * Tienda con Tebex Headless API: los paquetes se leen de Tebex, el jugador vincula
+ * Discord (opcional, recomendado) y FiveM, y paga en la ventana oficial de Tebex.
  * Si la API no responde, se muestran los paquetes de config y "Comprar" abre la tienda.
  *
- * Flujo: crear carrito → login FiveM (redirige y vuelve) → agregar paquete → pagar.
+ * Flujo: Discord → crear carrito (con el Discord adentro) → login FiveM (redirige
+ * y vuelve) → agregar paquete → pagar. Tebex.js se carga recién al pagar.
  */
 (function () {
   const cfg = window.ICONICO;
   const token = cfg.tebex.publicToken;
   const API = 'https://headless.tebex.io/api';
+  const TEBEX_JS = 'https://js.tebex.io/v/1.js';
   const KEY = 'iconico_basket';
   const PENDING = 'iconico_pending_pkg';
   const $ = (id) => document.getElementById(id);
@@ -43,17 +45,9 @@
 
   const pointsOf = (name) => Number(String(name).replace(/\./g, '').match(/\d+/)?.[0]) || 0;
 
-  /** Gema SVG; los paquetes más grandes tienen más brillo. */
-  function gem(level) {
-    const glow = 0.35 + level * 0.1;
-    return `<svg viewBox="0 0 100 100" aria-hidden="true">
-      <defs><linearGradient id="g${level}" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#d9f1ff"/><stop offset=".45" stop-color="#3b9dff"/><stop offset="1" stop-color="#0a3d91"/></linearGradient></defs>
-      <polygon points="50,92 6,38 24,12 76,12 94,38" fill="url(#g${level})" stroke="#bfe6ff" stroke-width="1.5"/>
-      <polygon points="24,12 38,38 50,12 62,38 76,12" fill="rgba(255,255,255,${glow})"/>
-      <polyline points="6,38 94,38" stroke="#e6f6ff" stroke-width="1.2" fill="none"/>
-      <polyline points="38,38 50,92 62,38" stroke="#bfe6ff" stroke-width="1" fill="none" opacity=".7"/>
-    </svg>`;
+  /** Avisa a la cuenta (account.js) cómo quedó el carrito: usuario de FiveM, etc. */
+  function announce() {
+    document.dispatchEvent(new CustomEvent('iconico:basket', { detail: basket }));
   }
 
   function renderPackages() {
@@ -71,7 +65,7 @@
       return `
       <article class="pkg reveal ${i === best && save ? 'best' : ''} ${inBasket.has(p.id) ? 'in-basket' : ''}" data-i="${i}">
         ${i === best && save ? '<span class="pkg-badge">MEJOR VALOR</span>' : save ? `<span class="pkg-badge">-${save}%</span>` : ''}
-        <div class="gem">${gem(i)}</div>
+        <div class="gem">${window.Gem ? Gem.svg(i, packages.length) : ''}</div>
         <h3>${p.points ? p.points.toLocaleString('es-AR') : App.esc(p.name)}</h3>
         <p class="pkg-sub">${p.points ? 'Puntos de bonificación' : ''}</p>
         <div class="price">${money(p.price, p.currency)}</div>
@@ -114,13 +108,25 @@
     }
   }
 
+  /** Crea el carrito; si hay Discord vinculado, va adentro para saber quién compró. */
   async function createBasket() {
+    const user = window.Account?.user();
     const b = await api(`/accounts/${token}/baskets`, {
       method: 'POST',
-      body: JSON.stringify({ complete_url: `${cleanUrl()}?compra=ok#tienda`, cancel_url: `${cleanUrl()}?compra=cancelada#tienda`, complete_auto_redirect: true }),
+      body: JSON.stringify({
+        complete_url: `${cleanUrl()}?compra=ok#tienda`,
+        cancel_url: `${cleanUrl()}?compra=cancelada#tienda`,
+        complete_auto_redirect: true,
+        ...(user ? { custom: { discord_id: user.id, discord_name: user.username } } : {}),
+      }),
     });
     store.set(KEY, b.ident);
     return b;
+  }
+
+  async function ensureBasket() {
+    basket = basket || (await getBasket()) || (await createBasket());
+    return basket;
   }
 
   /** Manda al jugador a loguearse con FiveM; vuelve a la web con ?auth=1. */
@@ -129,7 +135,19 @@
     const url = (Array.isArray(links) ? links : [links]).find((l) => l?.url)?.url;
     if (!url) throw new Error('Tebex no devolvió el link de inicio de sesión');
     App.toast('Te llevamos a iniciar sesión con FiveM…');
-    setTimeout(() => { location.href = url; }, 700);
+    setTimeout(() => { location.href = url; }, 600);
+  }
+
+  /** Vincular FiveM desde la cuenta o el paso 2 del modal. */
+  async function linkFiveM() {
+    if (!headless) { window.open(cfg.links.tienda, '_blank', 'noopener'); return; }
+    try {
+      await ensureBasket();
+      if (basket.username) { announce(); App.toast(`FiveM ya vinculado: ${basket.username}`); return; }
+      await login(basket);
+    } catch (err) {
+      App.toast(`No se pudo vincular FiveM: ${err.message}`, 5000);
+    }
   }
 
   async function addPackage(pkg) {
@@ -146,10 +164,16 @@
     const pkg = packages[i];
     if (!pkg) return;
     if (!headless) { window.open(cfg.links.tienda, '_blank', 'noopener'); return; }
+    // Sin cuentas vinculadas: primero el paso a paso (Discord → FiveM).
+    if (!basket?.username && window.Account?.needsLinking()) {
+      store.set(PENDING, String(pkg.id));
+      window.Account.openLink();
+      return;
+    }
     const btn = ev.currentTarget;
     btn.disabled = true;
     try {
-      basket = basket || (await getBasket()) || (await createBasket());
+      await ensureBasket();
       if (!basket.username) {
         store.set(PENDING, String(pkg.id));
         await login(basket);
@@ -177,24 +201,48 @@
 
   function renderBasket() {
     const items = basket?.packages || [];
+    const user = window.Account?.user();
     $('basketCount').textContent = items.length;
-    $('drawerUser').textContent = basket?.username ? `Comprando como ${basket.username}` : 'Al comprar te pedimos iniciar sesión con FiveM.';
+    $('drawerUser').innerHTML = basket?.username
+      ? `Comprando como <b>${App.esc(basket.username)}</b>${user ? ` · Discord <b>${App.esc(user.username)}</b>` : ''}`
+      : 'Al comprar vinculás tu Discord y tu cuenta de FiveM.';
     $('drawerItems').innerHTML = items.length
       ? items.map((p) => `<li><span>💎</span><b>${App.esc(p.name)}</b><button type="button" data-remove="${p.id}">Quitar</button></li>`).join('')
       : '<li class="empty">Tu carrito está vacío. Elegí un paquete en la tienda.</li>';
     $('drawerTotal').textContent = items.length ? money(basket.total_price, basket.currency) : '—';
     $('checkoutBtn').disabled = !items.length;
+    announce();
   }
 
-  function checkout() {
+  /** Carga Tebex.js una sola vez, recién cuando hace falta. */
+  let tebexLoading = null;
+  function loadTebex() {
+    if (window.Tebex?.checkout) return Promise.resolve(window.Tebex);
+    tebexLoading = tebexLoading || new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = TEBEX_JS;
+      s.async = true;
+      s.onload = () => resolve(window.Tebex);
+      s.onerror = () => { tebexLoading = null; reject(new Error('no cargó Tebex.js')); };
+      document.head.appendChild(s);
+    });
+    return tebexLoading;
+  }
+
+  async function checkout() {
     if (!basket?.packages?.length) return;
-    const Tebex = window.Tebex;
-    if (Tebex?.checkout) {
+    const btn = $('checkoutBtn');
+    btn.disabled = true;
+    try {
+      const Tebex = await loadTebex();
       Tebex.checkout.init({ ident: basket.ident, theme: 'dark', colors: [{ name: 'primary', color: '#3b9dff' }] });
       Tebex.checkout.on?.('payment:complete', done);
       Tebex.checkout.launch();
-    } else if (basket.links?.checkout) {
-      location.href = basket.links.checkout;
+    } catch {
+      if (basket.links?.checkout) location.href = basket.links.checkout;
+      else App.toast('No se pudo abrir el pago. Probá de nuevo en un momento.', 5000);
+    } finally {
+      btn.disabled = false;
     }
   }
 
@@ -223,12 +271,21 @@
       store.del(PENDING);
       const pkg = packages.find((p) => String(p.id) === pending);
       if (pkg) await addPackage(pkg).catch((e) => App.toast(`No se pudo agregar: ${e.message}`));
+    } else if (q.has('auth') && basket?.username) {
+      App.toast(`✓ FiveM vinculado: ${basket.username}`);
     } else if (q.has('auth') && !basket?.username) {
       App.toast('No pudimos confirmar tu sesión de FiveM. Probá de nuevo.');
     }
     renderPackages();
     renderBasket();
   }
+
+  window.Store = {
+    linkFiveM,
+    hasPending: () => Boolean(store.get(PENDING)),
+    clearPending: () => store.del(PENDING),
+    fivemUser: () => basket?.username || null,
+  };
 
   document.addEventListener('DOMContentLoaded', async () => {
     $('packages').addEventListener('click', (e) => {

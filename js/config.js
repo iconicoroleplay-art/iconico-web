@@ -19,6 +19,21 @@ window.ICONICO = {
   // Datos en vivo que sube el bot de Discord (estado, negocios, staff, bandas).
   live: { url: 'data/live.json', refreshSec: 60, staleMin: 15 },
 
+  // Tipos de negocio que muestra "El pulso de la ciudad".
+  negocios: {
+    restaurante: { icon: '🍽️', label: 'Restaurantes' },
+    tienda: { icon: '🛒', label: 'Tiendas LTD' },
+    taller: { icon: '🔧', label: 'Mecánicos' },
+  },
+
+  // Login con Discord (app de ICONICObot). Son IDs públicos, no claves.
+  // El link de la web tiene que estar en Discord Developer Portal → OAuth2 → Redirects.
+  discord: {
+    clientId: '1571359584667574314',
+    guildId: '1571348226404126730',
+    scope: 'identify guilds.members.read',
+  },
+
   // Tienda Tebex (Headless API). El Public Token es público: no es una clave secreta.
   tebex: {
     publicToken: '15b98-92a5964e48bf8d289f24b94ec8c7a346cb8294a0',

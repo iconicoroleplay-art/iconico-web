@@ -13,8 +13,10 @@
   <link rel="apple-touch-icon" href="assets/logo-128.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/logo-hd.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preconnect" href="https://headless.tebex.io" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261127">
 </head>
 <body>
   <canvas id="dust" aria-hidden="true"></canvas>
@@ -34,6 +36,10 @@
       <a href="#comunidad">Comunidad</a>
     </nav>
     <div class="nav-right">
+      <div class="account">
+        <button class="account-btn" id="accountBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="accountMenu"><span>Ingresar</span></button>
+        <div class="account-menu" id="accountMenu" role="menu"></div>
+      </div>
       <button class="basket-btn" id="basketBtn" type="button" aria-label="Abrir carrito">
         <span aria-hidden="true">💎</span><b id="basketCount">0</b>
       </button>
@@ -48,7 +54,7 @@
       <div class="hero-logo" id="heroLogo" aria-hidden="true">
         <div class="ring"></div>
         <div class="ring ring-2"></div>
-        <img src="assets/logo-hd.png" alt="Íconico Roleplay" width="640" height="640" fetchpriority="high">
+        <picture><source srcset="assets/logo-hd.webp" type="image/webp"><img src="assets/logo-hd.png" alt="Íconico Roleplay" width="480" height="480" fetchpriority="high" decoding="async"></picture>
       </div>
       <p class="eyebrow" id="liveHero"><span class="dot"></span><span>Conectando con la ciudad…</span></p>
       <h1 class="hero-title"><span class="shine">ÍCONICO</span><small>ROLEPLAY</small></h1>
@@ -94,7 +100,9 @@
       <div class="live-grid">
         <article class="panel reveal">
           <h3>🏪 Negocios <small id="negociosHint"></small></h3>
+          <div class="biz-tabs" id="bizTabs" role="tablist" aria-label="Tipo de negocio"></div>
           <ul class="biz" id="negocios"><li class="empty">Cargando negocios…</li></ul>
+          <p class="biz-note">Un local abre cuando hay al menos un empleado en servicio.</p>
         </article>
         <article class="panel reveal">
           <h3>🛡️ Equipo Íconico</h3>
@@ -171,7 +179,7 @@
   </main>
 
   <footer class="footer">
-    <img src="assets/logo-128.png" alt="" width="44" height="44">
+    <img src="assets/logo-128.png" alt="" width="44" height="44" loading="lazy" decoding="async">
     <p><b>Íconico Roleplay</b> · Servidor de rol en FiveM</p>
     <p class="muted">No estamos afiliados a Rockstar Games ni a Take-Two. Los pagos los procesa Tebex Limited.</p>
   </footer>
@@ -190,13 +198,26 @@
     </div>
   </aside>
 
+  <!-- Vincular cuentas antes de comprar -->
+  <div class="modal" id="linkModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="linkTitle">
+      <button type="button" class="x" data-link-close aria-label="Cerrar">✕</button>
+      <p class="kicker">Antes de comprar</p>
+      <h3 id="linkTitle">Vinculá tus cuentas</h3>
+      <p class="muted">Dos pasos y tu compra queda a tu nombre. Lo hacés una sola vez.</p>
+      <ol class="link-steps" id="linkSteps"></ol>
+      <button type="button" class="link-skip" id="linkSkip">Seguir sin Discord</button>
+    </div>
+  </div>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/config.js"></script>
-  <script src="https://js.tebex.io/v/1.js" defer></script>
-  <script src="js/fx.js" defer></script>
-  <script src="js/live.js" defer></script>
-  <script src="js/store.js" defer></script>
-  <script src="js/app.js" defer></script>
+  <script src="js/config.js?v=20261127"></script>
+  <script src="js/app.js?v=20261127" defer></script>
+  <script src="js/fx.js?v=20261127" defer></script>
+  <script src="js/gem.js?v=20261127" defer></script>
+  <script src="js/account.js?v=20261127" defer></script>
+  <script src="js/store.js?v=20261127" defer></script>
+  <script src="js/live.js?v=20261127" defer></script>
 </body>
 </html>

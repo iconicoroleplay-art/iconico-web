@@ -14,14 +14,15 @@
     let w = 0;
     let h = 0;
     let parts = [];
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    // En celulares alcanza con resolución 1: son puntos de luz, no hace falta más.
+    const dpr = window.innerWidth < 760 ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
 
     function resize() {
       w = canvas.width = Math.floor(window.innerWidth * dpr);
       h = canvas.height = Math.floor(window.innerHeight * dpr);
       canvas.style.width = `${window.innerWidth}px`;
       canvas.style.height = `${window.innerHeight}px`;
-      const n = Math.min(140, Math.floor((window.innerWidth * window.innerHeight) / 11000));
+      const n = Math.min(110, Math.floor((window.innerWidth * window.innerHeight) / 14000));
       parts = Array.from({ length: n }, () => spawn(true));
     }
 
@@ -60,7 +61,8 @@
     }
 
     resize();
-    window.addEventListener('resize', resize);
+    let rt = null;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(resize, 200); });
     requestAnimationFrame(frame);
   }
 
