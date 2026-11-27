@@ -1,8 +1,8 @@
 {
- "updatedAt": "2026-11-27T01:54:37.612Z",
+ "updatedAt": "2026-11-27T01:58:37.587Z",
  "server": {
   "online": true,
-  "players": 1,
+  "players": 2,
   "max": 4
  },
  "discord": {
@@ -49,16 +49,16 @@
   "reporting": true,
   "items": [
    {
-    "label": "REDLINE Performance",
-    "kind": "taller",
-    "open": false,
-    "count": 0
-   },
-   {
     "label": "LTD Sandy",
     "kind": "tienda",
     "open": true,
     "count": 1
+   },
+   {
+    "label": "REDLINE Performance",
+    "kind": "taller",
+    "open": false,
+    "count": 0
    },
    {
     "label": "LTD Grove Street",
