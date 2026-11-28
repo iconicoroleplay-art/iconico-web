@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-28T05:00:56.411Z",
+ "updatedAt": "2026-11-28T05:08:56.455Z",
  "server": {
   "online": false,
   "players": 0,
@@ -202,8 +202,8 @@
  ],
  "kick": {
   "channel": "thepelusa",
-  "live": false,
-  "title": null,
+  "live": true,
+  "title": "LOS PIBES JUEGAN A CHEREAR... // PAYDAY 3 // como no robar un banco ... ache...",
   "viewers": 0
  }
 }
